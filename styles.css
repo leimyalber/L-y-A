@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #eea3a3, #9c0202);
+    color: #FFF;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-family: 'Brush Script MT', cursive;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-message {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+footer p {
+    font-size: 1rem;
+    margin-top: 50px;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    background-color: #af0303;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 5s infinite ease-in-out;
+    clip-path: polygon(50% 0%, 100% 33%, 85% 100%, 50% 75%, 15% 100%, 0% 33%);
+}
+
+.heart:nth-child(3n+1) {
+    animation-duration: 7s;
+    left: 20%;
+}
+
+.heart:nth-child(3n+2) {
+    animation-duration: 4s;
+    left: 80%;
+}
+
+.heart:nth-child(3n+3) {
+    animation-duration: 6s;
+    left: 40%;
+}
+
+@keyframes float {
+    0% {
+        bottom: -50px;
+        transform: translateX(-50%) scale(0.5);
+    }
+    50% {
+        transform: translateX(-50%) scale(1);
+    }
+    100% {
+        bottom: 100vh;
+        transform: translateX(-50%) scale(0.5);
+    }
+}
+
+/* Estilos para el Álbum de Fotos */
+.album {
+    max-width: 80%;
+    margin: 0 auto 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    animation: slide 20s infinite;
+}
+
+.slider img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0 10px;
+    border-radius: 50px;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
